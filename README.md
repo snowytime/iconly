@@ -1,4 +1,4 @@
-# ⚡️ Iconify
+# ⚡️ Iconly
 
 A bunch of random icons, across various categories, designed to be used in React
 / Vue applications. All the icons have no height or width attributes by default
@@ -13,10 +13,10 @@ so you'll need to provide either of the two to the icons.
 
 ```css
 :root {
-	--android: #a4c439;
+    --android: #a4c439;
 }
 [data-theme="dark"] {
-	--android: #fff;
+    --android: #fff;
 }
 ```
 
@@ -29,12 +29,12 @@ css:
 
 ```css
 :root {
-	--background: #fff;
-	--foreground: #000;
+    --background: #fff;
+    --foreground: #000;
 }
 [data-theme="dark"] {
-	--background: #000;
-	--foreground: #fff;
+    --background: #000;
+    --foreground: #fff;
 }
 ```
 

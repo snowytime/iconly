@@ -1,25 +1,25 @@
-import { check_unique } from "./unique.js";
-import { generate_readme } from "./build_readme.js";
-import { build_package, Frameworks } from "./build.js";
+import { checkUnique } from "./unique.js";
+import { generateReadme } from "./build_readme.js";
+import { buildPackage, Frameworks } from "./build.js";
 import { release, ReleaseEnum } from "./release.js";
 
-const build_iconify = async (version: ReleaseEnum) => {
-	// we need to first run the check
-	try {
-		await check_unique();
-		await generate_readme();
-		await build_package(Frameworks.React);
-		await build_package(Frameworks.Vue);
-		release(version);
-	} catch (e) {
-		e?.();
-	}
+const buildIconify = async (version: ReleaseEnum) => {
+    // we need to first run the check
+    try {
+        await checkUnique();
+        await generateReadme();
+        await buildPackage(Frameworks.React);
+        await buildPackage(Frameworks.Vue);
+        release(version);
+    } catch (e) {
+        console.log(e);
+    }
 };
 
-let [version] = process.argv.slice(2);
+const [version] = process.argv.slice(2);
 
 if (!version || !Object.values(ReleaseEnum).some((v) => v === version)) {
-	throw new Error("Invalid version");
+    throw new Error("Invalid version");
 }
 
-build_iconify(version as ReleaseEnum);
+buildIconify(version as ReleaseEnum);

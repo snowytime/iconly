@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { promisify } from "node:util";
 import { inc } from "semver";
 
-const exec_promise = promisify(exec);
+const execPromise = promisify(exec);
 
 export enum ReleaseEnum {
     Patch = "patch",
@@ -19,15 +19,15 @@ export async function release(release: ReleaseEnum) {
     const upcomingVersion = inc(currentVersion, release);
     try {
         // begin by incrementing packages properly
-        await exec_promise(`cd react && npm version ${release}`);
-        await exec_promise(`cd vue && npm version ${release}`);
+        await execPromise(`cd react && npm version ${release}`);
+        await execPromise(`cd vue && npm version ${release}`);
         // finish off git
-        await exec_promise(
+        await execPromise(
             `git add . && git commit -m '⚡️ auto ${release}' && git push origin master`,
         );
         // release each package
-        await exec_promise("cd react && npm publish");
-        await exec_promise("cd vue && npm publish");
+        await execPromise("cd react && npm publish");
+        await execPromise("cd vue && npm publish");
         console.log(`✅ ${release}. ${currentVersion} -> ${upcomingVersion}`);
     } catch (e) {
         console.log(e);
