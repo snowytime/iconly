@@ -1,20 +1,21 @@
 {
-	"name": "@snowytime/iconify-vue",
-	"type": "module",
-	"license": "MIT",
-	"version": "1.0.4",
-	"description": "",
-	"keywords": [],
-	"files": [
-		"countries",
-		"programming",
-		"ui",
-		"credit"
-	],
-	"peerDependencies": {
-		"react": ">= 16"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+    "name": "@snowytime/iconify-vue",
+    "type": "module",
+    "license": "MIT",
+    "version": "1.0.5",
+    "description": "",
+    "keywords": [],
+    "sideEffects": false,
+    "files": [
+        "countries",
+        "programming",
+        "ui",
+        "credit"
+    ],
+    "peerDependencies": {
+        "react": ">= 16"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }
