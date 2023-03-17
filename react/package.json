@@ -1,11 +1,11 @@
 {
     "name": "@snowytime/iconly-react",
+    "sideEffects": false,
     "type": "module",
     "license": "MIT",
-    "version": "1.0.5",
+    "version": "2.0.0",
     "description": "",
     "keywords": [],
-    "sideEffects": false,
     "files": [
         "countries",
         "programming",
